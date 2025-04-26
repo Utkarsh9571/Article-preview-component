@@ -1,0 +1,257 @@
+:root{
+    
+    --Very-Dark-Grayish-Blue: hsl(217, 19%, 35%);
+    --Desaturated-Dark-Blue: hsl(214, 17%, 51%);
+    --Grayish-Blue: hsl(212, 23%, 69%);
+    --Light-Grayish-Blue: hsl(210, 46%, 95%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    font-family: Manrope;
+    background-color: var(--Light-Grayish-Blue);
+}
+
+.container{
+    max-width: 25em;
+    height: fit-content;
+    padding: 3em 1em;
+    justify-items: center;
+}
+
+.card{
+    width: 21em;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 0.75em;
+    position: relative;
+}
+.card .drawers{
+    overflow: hidden;
+    width: 100%;
+    height: 13em;
+}
+.card .description{
+    padding: 1.9em;
+    color: var(--Very-Dark-Grayish-Blue);
+    line-height: 1.5em;
+}
+.description h1{
+    font-size: 1em;
+}
+.description p{
+    font-size: 0.8em;
+    margin: 1em auto;
+    line-height: 1.6em;
+    font-weight: 500;
+    color: var(--Desaturated-Dark-Blue);
+    margin-bottom: -0.5em;
+}
+
+#user-info{
+    display: flex;
+    padding: 0 1.9em;
+    padding-bottom: 1.5em;
+}
+.with-share{
+    display: flex;
+    margin-left: 1em;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+.with-share h1{
+    font-size: 0.9em;
+    color: var(--Very-Dark-Grayish-Blue);
+    margin-bottom: 0.25em;
+}
+.with-share h2{
+    font-size: 0.85em;
+    font-weight: 400;
+    color: var(--Desaturated-Dark-Blue);
+}
+.avatar{
+    width: 15%;
+    height: 15%;
+    border-radius: 50%;
+}
+#share-icon-desktop{
+    display: none;
+}
+#icon-share{
+    width: 17%;
+    background-color: var(--Light-Grayish-Blue);
+    border-radius: 3em;
+    padding: 0.7em;
+    cursor: pointer;
+}
+
+#after-share-effect{
+    display: none;
+    background-color: var(--Very-Dark-Grayish-Blue);
+    justify-content: space-around;
+    padding: 3em 1em;
+    font-size: 0.5em;
+    text-transform: uppercase;
+    font-family: Manrope; 
+    color: var(--Grayish-Blue);
+    letter-spacing: 0.75em;
+    align-items: center;
+    width: 100%;
+    bottom: -1em;
+}
+.media{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    font-weight: 100;
+}
+.media img{
+    width: 2.5em;
+    height: 2.5em;
+}
+#share-img{
+    background-color: var(--Desaturated-Dark-Blue);
+    border-radius: 50%;
+    padding: 1.25em;
+    cursor: pointer;
+}
+
+@media (min-width: 48em){
+    .container{
+        max-width: 48em;
+    }
+    .card{
+        width: 46em;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        overflow: visible;
+        position: relative;
+    }
+    .card .drawers{
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 0.75em;
+        border-bottom-left-radius: 0.75em;
+    }
+    .description h1{
+        font-size: 1.35em;
+        line-height: 1.3em;
+    }
+    .description p{
+        font-size: 0.85em;
+    }
+    .avatar{
+        width: 11%;
+        height: 11%;
+        margin-top: 0.4em;
+    }
+    #share-icon-desktop{
+        display: block;
+        background-color: var(--Light-Grayish-Blue);
+        width: 12%;
+        border-radius: 3em;
+        padding: 0.6em;
+    }
+    #icon-share{
+        display: none;
+    }
+
+    #after-share-effect{
+        display: none;
+        position: absolute;
+        bottom: 12em;
+        right: -8em;
+        border-radius: 1.5em;
+        width: 30em;
+        padding: 2.5em 3em;
+        justify-content: space-evenly;
+        font-size: 0.5em;
+    }
+    #after-share-effect::after{
+        content: "";
+        position: absolute;
+        bottom: -1.5em;
+        left: 42.5%;
+        border-top: 3em solid var(--Very-Dark-Grayish-Blue);
+        border-left: 3em solid transparent;
+        border-right: 3em solid transparent;
+    }
+    #share-img{
+        display: none;
+    }
+    .media{
+        font-size: 1em;
+        justify-content: center;
+        align-items: center;
+        gap: 1.75em;
+    }
+}
+
+@media (min-width: 60em){
+    .container{
+        width: 60em;
+    }
+    .card{
+        width: 58em;
+    }
+    .whole-section{
+        padding: 1em;
+    }
+    .description h1{
+        font-size: 1.65em;
+    }
+    .description p{
+        font-size: 1em;
+    }
+    #share-icon-desktop{
+        width: 12%;
+        padding: 0.75em;
+    }
+    #after-share-effect{
+        right: -7em;
+        font-size: 0.62em;
+    }
+}
+
+@media (min-width:90em){
+    .container{
+        width: 90em;
+    }
+    .card{
+        width: 85em;
+    }
+    .whole-section{
+        padding: 1.75em;
+    }
+    .description h1{
+        font-size: 2.2em;
+    }
+    .description p{
+        font-size: 1.35em;
+    }
+    .with-share h1{
+        font-size: 1.25em;
+        margin-bottom: 0.2em;
+    }
+    .with-share h2{
+        font-size: 1.25em;
+    }
+    #share-icon-desktop{
+        width: 10%;
+        padding: 1.1em;
+    }
+    #after-share-effect{
+        bottom: 13em;
+        right: -7em;
+        font-size: 0.8em;
+    }
+}
